@@ -1,0 +1,35 @@
+.features {
+    grid-column: center-start / center-end;
+
+    margin: 15rem 0;
+
+    display: grid;
+    //grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr)); //auto-fit and minmax together gives opportunity
+                                                                // for 3 on 2 grid, become 2 on 3 columns when the page is less wider
+    grid-gap: 6rem;
+    align-items: start;
+
+    @media only screen and (max-width: $bp-small) {
+        margin: 9rem 0;
+     }
+}
+
+.feature {
+    display: grid;
+    grid-template-columns: min-content 1fr;
+    row-gap: 1.5rem;
+    column-gap: 2.5rem;
+
+    &__icon {
+        height: 4.5rem;
+        width: 4.5rem;
+        fill: $color-primary;
+        grid-row: 1 / -span 2;
+        transform: translateY(-1rem);
+    }
+
+    &__text {
+        font-size: 1.7rem;
+    }
+}
